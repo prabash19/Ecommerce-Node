@@ -8,8 +8,6 @@ exports.getAllUserRegister = async (req, res) => {
   //const data = await userRegisterModel.findOne({ age: req.params.id });
   //finding one doc by its _id
   //const data = await userRegisterModel.find(); // for all
-
-  console.log("data is", req.query);
   const data = await userRegisterModel.find(req.query);
   res.status(200).json({
     status: "success bruh",
@@ -17,8 +15,6 @@ exports.getAllUserRegister = async (req, res) => {
   });
 };
 exports.patchUserRegister = async (req, res) => {
-  console.log("age is", req.params.id);
-  console.log("new age is", req.body);
   try {
     const data = await userRegisterModel.findByIdAndUpdate(
       req.params.id,
